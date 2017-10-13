@@ -1,0 +1,60 @@
+.menu {
+  bottom: 0;
+  display: flex;
+  height: 25rem;
+  padding: 0 5rem;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.card {
+  position: relative;
+  height: 25rem;
+  width: 20rem;
+  margin: 0 -2.5rem;
+}
+
+.card__face {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  content: '';
+  pointer-events: none;
+  background: #ddd;
+  border: 2px solid #ccc;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.card__label {
+  padding: 1rem;
+}
+
+// Modified from original by Jack Rugile
+// ref: https://codepen.io/jackrugile/pres/WZGeGM
+$total: 4;
+@for $i from 0 through ($total - 1) {
+
+  $rotationRange: 20;
+  $rotation: ($i - ($total - 1) / 2) / ($total - 2) * $rotationRange;
+  $offsetRange: 30;
+  $offset: abs(($i - ($total - 1) / 2) / ($total - 2) * $offsetRange);
+
+  .card:nth-child(#{$i + 1}) {
+    .card__face {
+      transform: translateY($offset * 1px) rotate($rotation * 1deg);
+    }
+
+    &:hover {
+      .card__face {
+        transform: translateY(-100px) rotate(0deg) scale(2);
+        z-index: 5;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.menu {
+  bottom: 0;
+  display: flex;
+  height: 25rem;
+  padding: 0 5rem;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  right: 0; }
+
+.card {
+  position: relative;
+  height: 25rem;
+  width: 20rem;
+  margin: 0 -2.5rem; }
+
+.card__face {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  content: '';
+  pointer-events: none;
+  background: #ddd;
+  border: 2px solid #ccc;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 0.5rem;
+  overflow: hidden; }
+
+.card__label {
+  padding: 1rem; }
+
+.card:nth-child(1) .card__face {
+  transform: translateY(22.5px) rotate(-15deg); }
+
+.card:nth-child(1):hover .card__face {
+  transform: translateY(-100px) rotate(0deg) scale(2);
+  z-index: 5; }
+
+.card:nth-child(2) .card__face {
+  transform: translateY(7.5px) rotate(-5deg); }
+
+.card:nth-child(2):hover .card__face {
+  transform: translateY(-100px) rotate(0deg) scale(2);
+  z-index: 5; }
+
+.card:nth-child(3) .card__face {
+  transform: translateY(7.5px) rotate(5deg); }
+
+.card:nth-child(3):hover .card__face {
+  transform: translateY(-100px) rotate(0deg) scale(2);
+  z-index: 5; }
+
+.card:nth-child(4) .card__face {
+  transform: translateY(22.5px) rotate(15deg); }
+
+.card:nth-child(4):hover .card__face {
+  transform: translateY(-100px) rotate(0deg) scale(2);
+  z-index: 5; }
