@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import home from './cards/home.svg';
+
 import './Menu.css';
 
 class Menu extends Component {
   render() {
     return (
-      <div id="menu" className="menu">
-        <Card to="/home">Home</Card>
+      <ul id="navigation" className="menu">
+        <Card to="/"><img src={home} alt="home" />Home</Card>
         <Card to="/programming">Programming</Card>
         <Card to="/gaming">Gaming</Card>
         <Card to="/soccer">Soccer</Card>
-      </div>
+      </ul>
     );
   }
 }
 
-const Card = (props) => (
-  <Link to={props.to} className="card">
-    <div className="card__face">
+const Card = props => (
+  <li className="card">
+    <Link to={props.to} className="card__face">
       <div className="card__label">{props.children}</div>
-    </div>
-  </Link>
+    </Link>
+  </li>
 );
 
 export default Menu;

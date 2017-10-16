@@ -3,7 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Header from './Header.js';
 import Main from './Main.js';
-import Footer from './Footer.js';
+
+import './App.css';
 
 class App extends Component {
   render() {
@@ -12,7 +13,6 @@ class App extends Component {
         <div id="app">
           <Header />
           <Main />
-          <Footer />
         </div>
       </BrowserRouter>
     );

@@ -11,9 +11,11 @@
 
 .card {
   position: relative;
+  display: block;
   height: 25rem;
   width: 20rem;
   margin: 0 -2.5rem;
+  cursor: pointer;
 }
 
 .card__face {
@@ -22,10 +24,8 @@
   left: 0;
   right: 0;
   top: 0;
-  content: '';
-  pointer-events: none;
   background: #ddd;
-  border: 2px solid #ccc;
+  border: 3px solid #eee;
   transition: transform 0.2s ease-in-out;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -50,9 +50,10 @@ $total: 4;
       transform: translateY($offset * 1px) rotate($rotation * 1deg);
     }
 
-    &:hover {
-      .card__face {
-        transform: translateY(-100px) rotate(0deg) scale(2);
+    &:hover,
+    &:focus {
+      .card__face{
+        transform: translateY(-100px) rotate(0deg) scale(1.7);
         z-index: 5;
       }
     }
