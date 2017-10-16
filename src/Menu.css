@@ -1,4 +1,5 @@
 .menu {
+  display: none;
   bottom: 0;
   display: flex;
   height: 25rem;
@@ -17,6 +18,7 @@
   cursor: pointer; }
 
 .card__face {
+  display: none;
   position: absolute;
   bottom: 0;
   left: 0;

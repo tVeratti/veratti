@@ -8,8 +8,8 @@ const Section = props => {
         <span className="section__label">{props.header}</span>
       </h3>
       <div className="section__content">
-        <svg className="section__flourish">
-          <line x1="0" y1="0" x2="100%" y2="0"/>
+        <svg className="section__corner">
+          <path d="M 1 1 l 20 20 l 0 5"/>
         </svg>
         <div aria-hidden="true" className="section__border" />
         {props.children}

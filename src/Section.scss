@@ -19,7 +19,7 @@ $color-section__border: $color-C;
 
 .section__border{
   position: absolute;
-  top: 2rem;
+  top: 2.5rem;
   left: 0;
   right: 0;
   min-height: 10rem;
@@ -37,10 +37,14 @@ $color-section__border: $color-C;
     linear-gradient(to bottom, $color-section__border, rgba(0, 0, 0, 0)) 1 100%;
 }
 
-.section__flourish {
-  width: 100%;
-  line{
+.section__corner{
+  position: absolute;
+  top: 0;
+  left:calc(100% - 2.2rem);
+  
+  path{
     stroke: $color-section__border;
     stroke-width: 2px;
+    fill: none;
   }
 }

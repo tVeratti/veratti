@@ -12,7 +12,7 @@
 
 .section__border {
   position: absolute;
-  top: 2rem;
+  top: 2.5rem;
   left: 0;
   right: 0;
   min-height: 10rem;
@@ -24,8 +24,11 @@
   -o-border-image: -o-linear-gradient(#820333, transparent) 1 100%;
   border-image: linear-gradient(to bottom, #820333, transparent) 1 100%; }
 
-.section__flourish {
-  width: 100%; }
-  .section__flourish line {
+.section__corner {
+  position: absolute;
+  top: 0;
+  left: calc(100% - 2.2rem); }
+  .section__corner path {
     stroke: #820333;
-    stroke-width: 2px; }
+    stroke-width: 2px;
+    fill: none; }
