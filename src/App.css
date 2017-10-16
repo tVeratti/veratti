@@ -1,7 +1,15 @@
 html {
   position: relative;
   min-height: 100%;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  font-family: 'Droid Sans',sans-serif;
+  color: #222; }
 
 body {
   font-size: 14px; }
+
+a {
+  color: #F0433A; }
+  a:link, a:visited, a:active {
+    color: #F0433A;
+    text-decoration: none; }

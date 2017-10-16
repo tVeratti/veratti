@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import home from './cards/home.svg';
-
 import './Menu.css';
 
 class Menu extends Component {
   render() {
     return (
       <ul id="navigation" className="menu">
-        <Card to="/"><img src={home} alt="home" />Home</Card>
+        <Card to="/">Home</Card>
         <Card to="/programming">Programming</Card>
         <Card to="/gaming">Gaming</Card>
         <Card to="/soccer">Soccer</Card>

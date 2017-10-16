@@ -1,2 +1,31 @@
+.section__content {
+  position: relative; }
+
 .section__header {
-  border-bottom: 1px solid #8D0000; }
+  margin: 0; }
+
+.section__label {
+  display: inline-block;
+  padding: 1rem;
+  color: white;
+  background: #820333; }
+
+.section__border {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  min-height: 10rem;
+  border-width: 2px;
+  border-style: solid;
+  -webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, from(#820333), to(transparent)) 1 100%;
+  -webkit-border-image: -webkit-linear-gradient(#820333, transparent) 1 100%;
+  -moz-border-image: -moz-linear-gradient(#820333, transparent) 1 100%;
+  -o-border-image: -o-linear-gradient(#820333, transparent) 1 100%;
+  border-image: linear-gradient(to bottom, #820333, transparent) 1 100%; }
+
+.section__flourish {
+  width: 100%; }
+  .section__flourish line {
+    stroke: #820333;
+    stroke-width: 2px; }

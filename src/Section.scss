@@ -1,9 +1,46 @@
 @import "./_variables.scss";
 
-.section {
- 
+$color-section__border: $color-C;
+
+.section__content {
+ position: relative;
 }
 
 .section__header {
-  border-bottom: 1px solid $color-primary;
+  margin: 0;
+}
+
+.section__label {
+  display: inline-block;
+  padding: 1rem;
+  color: white;
+  background: $color-C;
+}
+
+.section__border{
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  min-height: 10rem;
+  border-width: 2px;
+  border-style: solid;
+  -webkit-border-image: 
+    -webkit-gradient(linear, 0 0, 0 100%, from($color-section__border), to(rgba(0, 0, 0, 0))) 1 100%;
+  -webkit-border-image: 
+    -webkit-linear-gradient($color-section__border, rgba(0, 0, 0, 0)) 1 100%;
+  -moz-border-image:
+    -moz-linear-gradient($color-section__border, rgba(0, 0, 0, 0)) 1 100%;    
+  -o-border-image:
+    -o-linear-gradient($color-section__border, rgba(0, 0, 0, 0)) 1 100%;
+  border-image:
+    linear-gradient(to bottom, $color-section__border, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+.section__flourish {
+  width: 100%;
+  line{
+    stroke: $color-section__border;
+    stroke-width: 2px;
+  }
 }
