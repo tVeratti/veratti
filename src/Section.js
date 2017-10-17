@@ -4,15 +4,16 @@ import './Section.css';
 const Section = props => {
   return (
     <div className="section">
+      {/* Header */}
       <h3 className="section__header">
+        <span className="section__bevel" aria-hidden="true" />
         <span className="section__label">{props.header}</span>
       </h3>
+
+      {/* Content */}
       <div className="section__content">
-        <svg className="section__corner">
-          <path d="M 1 1 l 20 20 l 0 5"/>
-        </svg>
-        <div aria-hidden="true" className="section__border" />
-        {props.children}
+        <span className="section__bevel section__bevel--filled" />
+        <div className="section__text">{props.children}</div>
       </div>
     </div>
   )
