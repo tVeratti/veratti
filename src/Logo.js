@@ -3,44 +3,62 @@ import './Logo.css';
 
 class Logo extends Component {
   state = { widths: [], expanded: false }
+ 
 
   render(){
-    const { expanded } = this.state;
+    const { expanded, full } = this.state;
+
     let className = 'logo';
-    if (expanded) className += ' logo--expanded';
+    if (expanded || full) className += ' logo--expanded';
 
     return (
       <div className={className}
         onMouseEnter={this.expand}
         onMouseLeave={this.collapse}>
 
-        <div className="t" ref="t">t</div>
+        <div className="logo__anchor">
+          {/* T */}
+          <div className="logo__letter" ref="t">T</div>
+          {/* atiana */}
+          <div className="logo__word" ref="a"
+            style={this.computeOffset(0)}>atiana</div>
 
-        <div className="logo__hides" ref="a"
-          style={this.computeOffset(0)}>atiana</div>
-
-        <div className="v" ref="v"
-          style={this.computeOffset(1)}>v</div>
-
-        <div className="logo__hides"
-          style={this.computeOffset(2)}>eratti</div>
+          {/* V */}
+          <div className="logo__letter" ref="v"
+            style={this.computeOffset(1)}>V</div>
+          {/* eratti */}
+          <div className="logo__word"
+            style={this.computeOffset(2)}>eratti</div>
+        </div>
 
       </div>
     );
   }
 
   componentDidMount(){
+    this.measure(this.props);
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.measure(nextProps);
+  }
+
+  measure(props){
     const { t, a, v } = this.refs;
     const widths = [t, a, v].map(r => r.offsetWidth);
-    this.setState({ widths });
+
+    const { pathname } = props;
+    const full = !pathname.split('/')[1];
+
+    this.setState({ widths, full });
   }
 
   computeOffset = index => {
-    const { widths, expanded } = this.state;
+    const { widths, expanded, full } = this.state;
     let offset = 0;
     for (let i = 0; i <= index; i++){ offset += widths[i]; }
     
-    const translate = expanded 
+    const translate = expanded || full
       ? 0
       : (index === 1 ? widths[1] : offset) * -1;
 

@@ -1,26 +1,43 @@
+@import 'variables';
+
+$height-letter: 42px;
+
 .logo {
-  position: relative;
-  height: 30px;
-  >div{
-      position: absolute;
-      bottom: 0;
-      transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+  height: 5rem;
+  padding: 2rem;
+  background: #eee;
+
+  .logo__anchor{ position: relative; }
+
+  .logo__word,
+  .logo__letter {
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: $height-letter;
   }
 
-  .v { padding-left: 5px; }
-  .t, .v { font-size: 16px; }
+  .logo__letter{
+    font-size: $height-letter;
+    font-weight: bold;
+    //width: 2rem;
+    color: $color-C;
+    transition: transform 0.3s ease-in-out;
+    text-align: right;
+  }
 
-  .logo__hides{
-    visibility: hidden;
+  .logo__word{
+    //visibility: hidden;
     opacity: 0;
-    transition-delay: 0.2s;
+    //transition-delay: 0.2s;
+    &+.logo__letter{ padding-left: 1rem; }
   }
 
-  &.logo--expanded{
-      .logo__hides{
-        visibility: visible;
-        opacity: 1;
-        transition-delay: 0;
-      }
+  &.logo--expanded {
+    .logo__word {
+      //visibility: visible;
+      opacity: 1;
+      transition: transform 0.3s ease-in-out, opacity 1s ease-in-out;
+    }
   }
 }
