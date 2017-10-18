@@ -12,7 +12,7 @@ const Section = props => {
 
       {/* Content */}
       <div className="section__content">
-        <span className="section__bevel section__bevel--filled" />
+        {/*<span className="section__bevel section__bevel--filled" />*/}
         <div className="section__text">{props.children}</div>
       </div>
     </div>

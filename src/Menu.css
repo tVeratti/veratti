@@ -1,8 +1,7 @@
 .menu {
-  display: none;
   bottom: 0;
   display: flex;
-  height: 25rem;
+  height: 20rem;
   padding: 0 5rem;
   justify-content: center;
   position: fixed;
@@ -18,7 +17,6 @@
   cursor: pointer; }
 
 .card__face {
-  display: none;
   position: absolute;
   bottom: 0;
   left: 0;

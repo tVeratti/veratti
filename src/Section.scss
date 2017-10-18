@@ -1,8 +1,8 @@
 @import "./_variables.scss";
 
-$color-section__border: $color-C;
+$color-section__border: $color-A;
 
-$bevel-size: 2rem;
+$bevel-size: 2.5rem;
 $border-width: 0.2rem;
 $inner-bevel-offset: ($bevel-size - $border-width) * -1;
 
@@ -11,8 +11,9 @@ $inner-bevel-offset: ($bevel-size - $border-width) * -1;
   display: inline-block;
   margin: 0;
   padding: 0 3rem 0 1rem;
-  line-height: $bevel-size;
+  line-height: 25px;
   min-width: 10rem;
+  color: white;
 }
 
 .section__label {
@@ -24,62 +25,27 @@ $inner-bevel-offset: ($bevel-size - $border-width) * -1;
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
+    right: 0;
     height: 0;
-    border: $bevel-size solid #ddd;
+    border: $bevel-size solid $color-section__border;
     border-top: 0;
     border-right-color: transparent;
-    &.section__bevel--filled:after{
-        content: "";
-        position: absolute;
-        left: $inner-bevel-offset;
-        right: $inner-bevel-offset;
-        top: $border-width;
-        height: 0;
-        border: #{$bevel-size - $border-width} solid white;
-        border-top: 0;
-        border-right-color: transparent;
-        border-right-width: $bevel-size - 0.2rem;
-    }
 }
 
 .section__content{
-    position: relative;
     min-height: 50px;
     padding: 1rem;
+    border: 2px solid $color-section__border;
+    border-bottom: none;
+    // -webkit-border-image: 
+    //   -webkit-gradient(linear, 0 0, 0 100%, from($color-section__border), to(rgba(0, 0, 0, 0))) 1 100%;
+    // -webkit-border-image: 
+    //   -webkit-linear-gradient($coylor-section__border, rgba(0, 0, 0, 0)) 1 100%;
+    // -moz-border-image:
+    //   -moz-linear-gradient($color-section__border, rgba(0, 0, 0, 0)) 1 100%;    
+    // -o-border-image:
+    //   -o-linear-gradient($color-section__border, rgba(0, 0, 0, 0)) 1 100%;
+    // border-image:
+    //   linear-gradient(to bottom, $color-section__border, rgba(0, 0, 0, 0)) 1 100%;
     .section__text{ transform: translateX(0); }
-    
-    &:after{
-        content: "";
-        position: absolute;
-        top: $bevel-size;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border: 2px solid #ddd;
-        border-top: none;
-        border-bottom: none;
-        
-    }
-}
-
-
-.section__border{
-  position: absolute;
-  top: 2.5rem;
-  left: 0;
-  right: 0;
-  min-height: 10rem;
-  border-width: 2px;
-  border-style: solid;
-  -webkit-border-image: 
-    -webkit-gradient(linear, 0 0, 0 100%, from($color-section__border), to(rgba(0, 0, 0, 0))) 1 100%;
-  -webkit-border-image: 
-    -webkit-linear-gradient($color-section__border, rgba(0, 0, 0, 0)) 1 100%;
-  -moz-border-image:
-    -moz-linear-gradient($color-section__border, rgba(0, 0, 0, 0)) 1 100%;    
-  -o-border-image:
-    -o-linear-gradient($color-section__border, rgba(0, 0, 0, 0)) 1 100%;
-  border-image:
-    linear-gradient(to bottom, $color-section__border, rgba(0, 0, 0, 0)) 1 100%;
 }
