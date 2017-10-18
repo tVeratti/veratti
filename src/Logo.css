@@ -1,0 +1,19 @@
+.logo {
+  position: relative;
+  height: 30px; }
+  .logo > div {
+    position: absolute;
+    bottom: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out; }
+  .logo .v {
+    padding-left: 5px; }
+  .logo .t, .logo .v {
+    font-size: 16px; }
+  .logo .logo__hides {
+    visibility: hidden;
+    opacity: 0;
+    transition-delay: 0.2s; }
+  .logo.logo--expanded .logo__hides {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0; }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Menu from './Menu.js';
+import Logo from './Logo.js';
 
 class Header extends Component {
   render() {
@@ -11,6 +12,8 @@ class Header extends Component {
           <li><a href="#content">To Content</a></li>
           <li><a href="#navigation">To Navigation</a></li>
         </ul>
+
+        <Logo />
 
         <Menu />
       </header>
