@@ -1,0 +1,25 @@
+.logo {
+  height: 5rem;
+  padding: 2rem;
+  background: #eee; }
+  .logo .logo__anchor {
+    position: relative; }
+  .logo .logo__word,
+  .logo .logo__letter {
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 42px; }
+  .logo .logo__letter {
+    font-size: 42px;
+    font-weight: bold;
+    color: #820333;
+    transition: transform 0.3s ease-in-out;
+    text-align: right; }
+  .logo .logo__word {
+    opacity: 0; }
+    .logo .logo__word + .logo__letter {
+      padding-left: 1rem; }
+  .logo.logo--expanded .logo__word {
+    opacity: 1;
+    transition: transform 0.3s ease-in-out, opacity 1s ease-in-out; }
