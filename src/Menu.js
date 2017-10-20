@@ -6,12 +6,15 @@ import './Menu.css';
 class Menu extends Component {
   render() {
     return (
-      <ul id="navigation" className="menu">
-        <Card to="/">Home</Card>
-        <Card to="/programming">Programming</Card>
-        <Card to="/gaming">Gaming</Card>
-        <Card to="/soccer">Soccer</Card>
-      </ul>
+      <div className="menu">
+        <ul id="navigation" className="menu__cards">
+          <Card to="/">Home</Card>
+          <Card to="/engineer">Programming</Card>
+          <Card to="/artist">Artist</Card>
+          <Card to="/gamer">Gamer</Card>
+        </ul>
+        <div className="menu__cover"/>
+      </div>
     );
   }
 }

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import "variables";
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    font-size: 62.5%; // For REM sizing, base 10
+    font-family: 'Ubuntu',sans-serif;
+    color: $color-base;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+a { @include link-color($color-link); }
+
+h2 {
+    border-left: 0.5rem solid $color-D;
+    padding-left: 0.5rem;
+}
+
+#content {
+    width: 80%;
+    margin: auto;
+    padding-top: 5rem;
+}

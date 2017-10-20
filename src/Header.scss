@@ -1,0 +1,33 @@
+@import "variables";
+
+.header{
+  display: flex;
+  align-items: flex-end;
+  background: #eee;
+  padding: 1rem 10%;
+}
+
+#skiplinks a{
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  &:focus{
+    left: 0;
+  }
+}
+
+.header__image{
+  width: 20rem;
+  height: 20rem;
+  background: url('./images/cat.jpg');
+  background-size: auto 100%;
+  margin-bottom: -6rem;
+  border: 5px solid white;
+  border-radius: 100%;
+}
+
+.header__name{
+  margin-left: 2rem;
+  font-size: 42px;
+  color: $color-E;
+}

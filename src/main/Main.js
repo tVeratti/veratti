@@ -7,7 +7,7 @@ import Engineer from './Engineer.js';
 import Artist from './Artist.js';
 import Gamer from './Gamer.js';
 
-import './_Main.css';
+import './Main.css';
 
 class Main extends Component {
   render() {

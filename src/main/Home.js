@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 
-import './Home.css';
-
 class Home extends Component {
   render() {
     return (
-      <div id="home" className="view view--home">
-        <h1>CERNER FLASHES</h1>
-        <h2>XYZ</h2>
+      <div className="view view--home">
+        <h2>Tatiana Veratti</h2>
+        <h3>{global.translations.Me}</h3>
+        <div className="view__section">
+          <p>{global.translations.Intro}</p>
+        </div>
+
+        <h3>{global.translations.Contact}</h3>
+        <div className="view__section">
+          <p>Me@TatianaVeratti.com</p>
+          <p>@TatianaVeratti.com</p>
+        </div>
       </div>
     );
   }

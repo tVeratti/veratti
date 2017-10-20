@@ -1,0 +1,72 @@
+.menu, .menu__cover, .menu__cards {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.menu__cover {
+  height: 3rem;
+  background: #2E112D; }
+
+.menu__cards {
+  display: flex;
+  height: 20rem;
+  padding: 0 10%;
+  justify-content: center; }
+
+.card {
+  position: relative;
+  display: block;
+  height: 25rem;
+  width: 20rem;
+  margin: 0 -2.5rem;
+  cursor: pointer; }
+
+.card__face {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #eee;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(46, 17, 45, 0.4); }
+
+.card__label {
+  padding: 1rem;
+  font-weight: bold; }
+
+.card:nth-child(1) .card__face {
+  transform: translateY(22.5px) rotate(-15deg); }
+
+.card:nth-child(1):hover .card__face, .card:nth-child(1):focus .card__face {
+  transform: translateY(-100px) rotate(0deg) scale(1.7);
+  z-index: 5;
+  transition-duration: 0.1s; }
+
+.card:nth-child(2) .card__face {
+  transform: translateY(7.5px) rotate(-5deg); }
+
+.card:nth-child(2):hover .card__face, .card:nth-child(2):focus .card__face {
+  transform: translateY(-100px) rotate(0deg) scale(1.7);
+  z-index: 5;
+  transition-duration: 0.1s; }
+
+.card:nth-child(3) .card__face {
+  transform: translateY(7.5px) rotate(5deg); }
+
+.card:nth-child(3):hover .card__face, .card:nth-child(3):focus .card__face {
+  transform: translateY(-100px) rotate(0deg) scale(1.7);
+  z-index: 5;
+  transition-duration: 0.1s; }
+
+.card:nth-child(4) .card__face {
+  transform: translateY(22.5px) rotate(15deg); }
+
+.card:nth-child(4):hover .card__face, .card:nth-child(4):focus .card__face {
+  transform: translateY(-100px) rotate(0deg) scale(1.7);
+  z-index: 5;
+  transition-duration: 0.1s; }

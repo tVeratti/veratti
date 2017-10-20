@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class Artist extends Component {
   render() {
     return (
-      <div id="soccer" className="view view--soccer">Soccer</div>
+      <div id="artist" className="view view--artist">
+        <h2>Artist</h2>
+      </div>
     );
   }
 }

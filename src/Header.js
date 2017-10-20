@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
 
-import Menu from './Menu.js';
-import Logo from './Logo.js';
+import './Header.css';
 
 class Header extends Component {
   render() {
+
     return (
       <header className="header">
         {/* Skip Links */}
@@ -14,12 +13,16 @@ class Header extends Component {
           <li><a href="#navigation">To Navigation</a></li>
         </ul>
       
+        <div className="header__image" aria-hidden="true" />
+        <h1 className="header__name">Tatiana Veratti</h1>
 
-        <Route render={({ location }) => <Logo pathname={location.pathname} /> }/>
-
-        <Menu />
       </header>
     );
+  }
+
+  changeLanguage = lang => {
+    const { onLanguageChange } = this.props;
+    onLanguageChange('fr');
   }
 }
 
