@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-class Programming extends Component {
+class Engineer extends Component {
   render() {
     return (
-      <div id="programming" className="view view--programming">
-        <h1>Programming</h1>
+      <div id="engineer" className="view view--engineer">
+        <h1>Engineer</h1>
         <p>
           <q>The secret of joy in work is contained in one word – excellence. To know how to do something well is to enjoy it.</q>
           - Pearl S. Buck
@@ -21,4 +21,4 @@ class Programming extends Component {
   }
 }
 
-export default Programming;
+export default Engineer;

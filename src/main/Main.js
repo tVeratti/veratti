@@ -3,11 +3,11 @@ import { Switch, Route } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group'
 
 import Home from './Home.js';
-import Gaming from './Gaming.js';
-import Soccer from './Soccer.js';
-import Programming from './Programming.js';
+import Engineer from './Engineer.js';
+import Artist from './Artist.js';
+import Gamer from './Gamer.js';
 
-import './Main.css';
+import './_Main.css';
 
 class Main extends Component {
   render() {
@@ -21,9 +21,9 @@ class Main extends Component {
         
           <Switch key={location.key} location={location}>
             <Route path="/" exact component={Home} />
-            <Route path="/gaming" component={Gaming} />
-            <Route path="/soccer" component={Soccer} />
-            <Route path="/programming" component={Programming} />
+            <Route path="/engineer" component={Engineer} />
+            <Route path="/artist" component={Artist} />
+            <Route path="/gamer" component={Gamer} />
           </Switch>
         </CSSTransitionGroup>
       )}/>

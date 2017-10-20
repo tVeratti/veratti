@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Soccer extends Component {
+class Artist extends Component {
   render() {
     return (
       <div id="soccer" className="view view--soccer">Soccer</div>
@@ -8,4 +8,4 @@ class Soccer extends Component {
   }
 }
 
-export default Soccer;
+export default Artist;

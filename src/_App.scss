@@ -1,0 +1,23 @@
+@import "./_variables.scss";
+
+html {
+    position: relative;
+    min-height: 100%;
+    font-size: 62.5%; // For REM sizing, base 10
+    font-family: 'Droid Sans',sans-serif;
+    color: $color-base;
+}
+
+body{
+    font-size: 14px;
+}
+
+a {
+    color: $color-link;
+    &:link,
+    &:visited,
+    &:active {
+        color: $color-link;
+        text-decoration: none;
+    }
+}
