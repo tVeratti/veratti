@@ -1,4 +1,4 @@
-.menu, .menu__cover, .menu__cards > span {
+.menu, .menu__cover, .menu__cards {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -15,11 +15,13 @@
     height: 100%;
     line-height: 4rem; }
 
-.menu__cards > span {
+.menu__cards {
   display: flex;
   height: 25rem;
   padding: 0 10%;
-  justify-content: center; }
+  justify-content: center;
+  perspective: 20rem;
+  perspective-origin: center center; }
 
 .card {
   position: relative;
@@ -29,30 +31,6 @@
   margin: 0 -2.5rem;
   cursor: pointer;
   transition: transform 500ms ease-in, opacity 300ms ease-in; }
-  .card:nth-child(1):not(.card-leave):not(.card-enter) .card__face {
-    transform: translateY(30px) rotate(-20deg); }
-  .card:nth-child(1):not(.card-leave):not(.card-enter):hover .card__face, .card:nth-child(1):not(.card-leave):not(.card-enter):focus .card__face {
-    transform: translateY(-100px) rotate(0deg) scale(1.5);
-    z-index: 5;
-    transition-duration: 0.1s; }
-  .card:nth-child(2):not(.card-leave):not(.card-enter) .card__face {
-    transform: translateY(0px) rotate(0deg); }
-  .card:nth-child(2):not(.card-leave):not(.card-enter):hover .card__face, .card:nth-child(2):not(.card-leave):not(.card-enter):focus .card__face {
-    transform: translateY(-100px) rotate(0deg) scale(1.5);
-    z-index: 5;
-    transition-duration: 0.1s; }
-  .card:nth-child(3):not(.card-leave):not(.card-enter) .card__face {
-    transform: translateY(30px) rotate(20deg); }
-  .card:nth-child(3):not(.card-leave):not(.card-enter):hover .card__face, .card:nth-child(3):not(.card-leave):not(.card-enter):focus .card__face {
-    transform: translateY(-100px) rotate(0deg) scale(1.5);
-    z-index: 5;
-    transition-duration: 0.1s; }
-  .card:nth-child(4):not(.card-leave):not(.card-enter) .card__face {
-    transform: translateY(30px) rotate(20deg); }
-  .card:nth-child(4):not(.card-leave):not(.card-enter):hover .card__face, .card:nth-child(4):not(.card-leave):not(.card-enter):focus .card__face {
-    transform: translateY(-100px) rotate(0deg) scale(1.5);
-    z-index: 5;
-    transition-duration: 0.1s; }
 
 .card__face {
   position: absolute;
@@ -62,7 +40,6 @@
   top: 0;
   background: #DEDEDE;
   color: white;
-  transition: transform 0.3s ease-in-out;
   border-radius: 0.5rem;
   border: 5px solid #eee;
   overflow: hidden;
@@ -71,19 +48,3 @@
 .card__label {
   padding: 1rem;
   font-weight: bold; }
-
-.card-enter {
-  transform: translateY(90%) translateX(-100rem) rotate(-90deg); }
-
-.card-enter.card-enter-active {
-  transform: translate(0); }
-
-.card-leave {
-  position: absolute;
-  pointer-events: none;
-  transform: translate(0); }
-
-.card-leave.card-leave-active {
-  opacity: 0;
-  transform: translateY(90%) translateX(40rem) rotate(90deg);
-  z-index: -1; }

@@ -2,30 +2,24 @@
 // Modified from original by Jack Rugile
 // ref: https://codepen.io/jackrugile/pres/WZGeGM
 @mixin card-rotate($total){
-  @for $i from 0 through ($total) {
-    $index: $i;
-    @if $i == $total {
-      $index: $i - 1;
-    }
+  @for $i from 0 through ($total - 1) {
 
     $rotationRange: 20;
-    $rotation: ($index - ($total - 1) / 2) / ($total - 2) * $rotationRange;
+    $rotation: ($i - ($total - 1) / 2) / ($total - 2) * $rotationRange;
     $offsetRange: 30;
-    $offset: abs(($index - ($total - 1) / 2) / ($total - 2) * $offsetRange);
+    $offset: abs(($i - ($total - 1) / 2) / ($total - 2) * $offsetRange);
 
     &:nth-child(#{$i + 1}) {
-      &:not(.card-leave):not(.card-enter){
-        .card__face {
-          transform: translateY($offset * 1px) rotate($rotation * 1deg);
-        }
+      .card__face {
+        transform: translateY($offset * 1px) rotate($rotation * 1deg) rotateY(0) rotateX(0);
+      }
 
-        &:hover,
-        &:focus {
-          .card__face{
-            transform: translateY(-100px) rotate(0deg) scale(1.5);
-            z-index: 5;
-            transition-duration: 0.1s;
-          }
+      &:hover,
+      &:focus {
+        .card__face{
+          transform: translateY(-100px) rotate(0deg) scale(1.5) rotateY(0) rotateX(0);
+          z-index: 5;
+          //transition-duration: 0.1s;
         }
       }
     }
@@ -53,12 +47,14 @@
   }
 }
 
-.menu__cards > span {
+.menu__cards {
   @extend .menu;
   display: flex;
   height: 25rem;
   padding: 0 10%;
-  justify-content: center; 
+  justify-content: center;
+  perspective: 20rem;
+  perspective-origin: center center;
 }
 
 @mixin card-color($index, $color){
@@ -77,7 +73,8 @@
   margin: 0 -2.5rem;
   cursor: pointer;
   transition: transform 500ms ease-in, opacity 300ms ease-in;
-  @include card-rotate(3);
+  //@include card-rotate(4);
+  
 }
 
 .card__face {
@@ -88,35 +85,15 @@
   top: 0;
   background: $color-I;
   color: white;
-  transition: transform 0.3s ease-in-out;
+  //transition: transform 0.3s ease-in-out;
   border-radius: 0.5rem;
   border:5px solid #eee;
   overflow: hidden;
   box-shadow: 0 1px 2px rgba($color-FF, 0.4);
+  
 }
 
 .card__label {
   padding: 1rem;
   font-weight: bold;
-}
-
-.card-enter {
-  transform: translateY(90%) translateX(-100rem) rotate(-90deg);
-}
-
-.card-enter.card-enter-active {
-  transform: translate(0);
-  
-}
-
-.card-leave {
-  position: absolute;
-  pointer-events: none;
-  transform: translate(0);
-}
-
-.card-leave.card-leave-active {
-  opacity: 0;
-  transform: translateY(90%) translateX(40rem) rotate(90deg);
-  z-index: -1;
 }
