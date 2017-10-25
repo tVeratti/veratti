@@ -1,16 +1,23 @@
-.menu, .menu__cover, .menu__cards {
+.menu, .menu__cover, .menu__cards > span {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0; }
 
 .menu__cover {
-  height: 3rem;
-  background: #2E112D; }
-
-.menu__cards {
   display: flex;
-  height: 20rem;
+  justify-content: center;
+  height: 4rem;
+  background: #3d4850; }
+  .menu__cover a {
+    display: inline-block;
+    margin: 0 2rem;
+    height: 100%;
+    line-height: 4rem; }
+
+.menu__cards > span {
+  display: flex;
+  height: 25rem;
   padding: 0 10%;
   justify-content: center; }
 
@@ -20,7 +27,32 @@
   height: 25rem;
   width: 20rem;
   margin: 0 -2.5rem;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: transform 500ms ease-in, opacity 300ms ease-in; }
+  .card:nth-child(1):not(.card-leave):not(.card-enter) .card__face {
+    transform: translateY(30px) rotate(-20deg); }
+  .card:nth-child(1):not(.card-leave):not(.card-enter):hover .card__face, .card:nth-child(1):not(.card-leave):not(.card-enter):focus .card__face {
+    transform: translateY(-100px) rotate(0deg) scale(1.5);
+    z-index: 5;
+    transition-duration: 0.1s; }
+  .card:nth-child(2):not(.card-leave):not(.card-enter) .card__face {
+    transform: translateY(0px) rotate(0deg); }
+  .card:nth-child(2):not(.card-leave):not(.card-enter):hover .card__face, .card:nth-child(2):not(.card-leave):not(.card-enter):focus .card__face {
+    transform: translateY(-100px) rotate(0deg) scale(1.5);
+    z-index: 5;
+    transition-duration: 0.1s; }
+  .card:nth-child(3):not(.card-leave):not(.card-enter) .card__face {
+    transform: translateY(30px) rotate(20deg); }
+  .card:nth-child(3):not(.card-leave):not(.card-enter):hover .card__face, .card:nth-child(3):not(.card-leave):not(.card-enter):focus .card__face {
+    transform: translateY(-100px) rotate(0deg) scale(1.5);
+    z-index: 5;
+    transition-duration: 0.1s; }
+  .card:nth-child(4):not(.card-leave):not(.card-enter) .card__face {
+    transform: translateY(30px) rotate(20deg); }
+  .card:nth-child(4):not(.card-leave):not(.card-enter):hover .card__face, .card:nth-child(4):not(.card-leave):not(.card-enter):focus .card__face {
+    transform: translateY(-100px) rotate(0deg) scale(1.5);
+    z-index: 5;
+    transition-duration: 0.1s; }
 
 .card__face {
   position: absolute;
@@ -28,45 +60,30 @@
   left: 0;
   right: 0;
   top: 0;
-  background: #eee;
+  background: #DEDEDE;
   color: white;
   transition: transform 0.3s ease-in-out;
   border-radius: 0.5rem;
+  border: 5px solid #eee;
   overflow: hidden;
-  box-shadow: 0 1px 2px rgba(46, 17, 45, 0.4); }
+  box-shadow: 0 1px 2px rgba(61, 72, 80, 0.4); }
 
 .card__label {
   padding: 1rem;
   font-weight: bold; }
 
-.card:nth-child(1) .card__face {
-  transform: translateY(22.5px) rotate(-15deg); }
+.card-enter {
+  transform: translateY(90%) translateX(-100rem) rotate(-90deg); }
 
-.card:nth-child(1):hover .card__face, .card:nth-child(1):focus .card__face {
-  transform: translateY(-100px) rotate(0deg) scale(1.7);
-  z-index: 5;
-  transition-duration: 0.1s; }
+.card-enter.card-enter-active {
+  transform: translate(0); }
 
-.card:nth-child(2) .card__face {
-  transform: translateY(7.5px) rotate(-5deg); }
+.card-leave {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(0); }
 
-.card:nth-child(2):hover .card__face, .card:nth-child(2):focus .card__face {
-  transform: translateY(-100px) rotate(0deg) scale(1.7);
-  z-index: 5;
-  transition-duration: 0.1s; }
-
-.card:nth-child(3) .card__face {
-  transform: translateY(7.5px) rotate(5deg); }
-
-.card:nth-child(3):hover .card__face, .card:nth-child(3):focus .card__face {
-  transform: translateY(-100px) rotate(0deg) scale(1.7);
-  z-index: 5;
-  transition-duration: 0.1s; }
-
-.card:nth-child(4) .card__face {
-  transform: translateY(22.5px) rotate(15deg); }
-
-.card:nth-child(4):hover .card__face, .card:nth-child(4):focus .card__face {
-  transform: translateY(-100px) rotate(0deg) scale(1.7);
-  z-index: 5;
-  transition-duration: 0.1s; }
+.card-leave.card-leave-active {
+  opacity: 0;
+  transform: translateY(90%) translateX(40rem) rotate(90deg);
+  z-index: -1; }

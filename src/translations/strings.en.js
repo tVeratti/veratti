@@ -1,5 +1,6 @@
 export default {
-  Me: 'Me',
+  Home: 'Home',
+  AboutMe: 'About Me',
   Intro: 'My name is Tatiana Veratti. I am a software engineer building enterprise applications for the web. I am a passionate challenge-seeker who loves to create and compete.',
   Contact: 'Contact Me',
   Engineer: 'Engineer',

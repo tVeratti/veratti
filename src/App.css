@@ -7,9 +7,10 @@ html {
   min-height: 100%;
   font-size: 62.5%;
   font-family: 'Ubuntu',sans-serif;
-  color: #444;
-  overflow-x: hidden;
-  box-sizing: border-box; }
+  color: #DEDEDE;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #48555E; }
 
 body {
   font-size: 14px;
@@ -17,14 +18,26 @@ body {
   padding: 0; }
 
 a {
-  color: #F0433A; }
+  color: #10B1E2; }
   a:link, a:visited, a:active {
-    color: #F0433A;
+    color: #10B1E2;
+    text-decoration: none; }
+
+a.active {
+  color: #C6B712; }
+  a.active:link, a.active:visited, a.active:active {
+    color: #C6B712;
     text-decoration: none; }
 
 h2 {
-  border-left: 0.5rem solid #C9283E;
-  padding-left: 0.5rem; }
+  color: #C6B712;
+  font-size: 32px; }
+
+h3 {
+  text-transform: uppercase; }
+
+ul {
+  list-style: none; }
 
 #content {
   width: 80%;

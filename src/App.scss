@@ -11,8 +11,9 @@ html {
     font-size: 62.5%; // For REM sizing, base 10
     font-family: 'Ubuntu',sans-serif;
     color: $color-base;
-    overflow-x: hidden;
+    overflow: hidden;
     box-sizing: border-box;
+    background: $color-F;
 }
 
 body{
@@ -22,10 +23,18 @@ body{
 }
 
 a { @include link-color($color-link); }
+a.active { @include link-color($color-J); }
 
 h2 {
-    border-left: 0.5rem solid $color-D;
-    padding-left: 0.5rem;
+    color: $color-J;
+    font-size: 32px;
+}
+h3{ 
+    text-transform: uppercase;
+}
+
+ul {
+    list-style: none;
 }
 
 #content {

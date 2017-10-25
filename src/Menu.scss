@@ -1,4 +1,36 @@
 @import "variables";
+// Modified from original by Jack Rugile
+// ref: https://codepen.io/jackrugile/pres/WZGeGM
+@mixin card-rotate($total){
+  @for $i from 0 through ($total) {
+    $index: $i;
+    @if $i == $total {
+      $index: $i - 1;
+    }
+
+    $rotationRange: 20;
+    $rotation: ($index - ($total - 1) / 2) / ($total - 2) * $rotationRange;
+    $offsetRange: 30;
+    $offset: abs(($index - ($total - 1) / 2) / ($total - 2) * $offsetRange);
+
+    &:nth-child(#{$i + 1}) {
+      &:not(.card-leave):not(.card-enter){
+        .card__face {
+          transform: translateY($offset * 1px) rotate($rotation * 1deg);
+        }
+
+        &:hover,
+        &:focus {
+          .card__face{
+            transform: translateY(-100px) rotate(0deg) scale(1.5);
+            z-index: 5;
+            transition-duration: 0.1s;
+          }
+        }
+      }
+    }
+  }
+}
 
 .menu {
   position: fixed;
@@ -9,14 +41,22 @@
 
 .menu__cover {
   @extend .menu;
-  height: 3rem;
-  background: $color-A;
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+  background: $color-FF;
+  a {
+    display: inline-block;
+    margin: 0 2rem;
+    height: 100%;
+    line-height: 4rem;
+  }
 }
 
-.menu__cards {
+.menu__cards > span {
   @extend .menu;
   display: flex;
-  height: 20rem;
+  height: 25rem;
   padding: 0 10%;
   justify-content: center; 
 }
@@ -36,12 +76,8 @@
   width: 20rem;
   margin: 0 -2.5rem;
   cursor: pointer;
-
-  // @include card-color(1, $color-B);
-  // @include card-color(2, $color-C);
-  // @include card-color(3, $color-D);
-  // @include card-color(4, $color-E);
-  //a { @include link-color(white); }
+  transition: transform 500ms ease-in, opacity 300ms ease-in;
+  @include card-rotate(3);
 }
 
 .card__face {
@@ -50,12 +86,13 @@
   left: 0;
   right: 0;
   top: 0;
-  background: #eee;
+  background: $color-I;
   color: white;
   transition: transform 0.3s ease-in-out;
   border-radius: 0.5rem;
+  border:5px solid #eee;
   overflow: hidden;
-  box-shadow: 0 1px 2px rgba($color-A, 0.4);
+  box-shadow: 0 1px 2px rgba($color-FF, 0.4);
 }
 
 .card__label {
@@ -63,28 +100,23 @@
   font-weight: bold;
 }
 
-// Modified from original by Jack Rugile
-// ref: https://codepen.io/jackrugile/pres/WZGeGM
-$total: 4;
-@for $i from 0 through ($total - 1) {
+.card-enter {
+  transform: translateY(90%) translateX(-100rem) rotate(-90deg);
+}
 
-  $rotationRange: 20;
-  $rotation: ($i - ($total - 1) / 2) / ($total - 2) * $rotationRange;
-  $offsetRange: 30;
-  $offset: abs(($i - ($total - 1) / 2) / ($total - 2) * $offsetRange);
+.card-enter.card-enter-active {
+  transform: translate(0);
+  
+}
 
-  .card:nth-child(#{$i + 1}) {
-    .card__face {
-      transform: translateY($offset * 1px) rotate($rotation * 1deg);
-    }
+.card-leave {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(0);
+}
 
-    &:hover,
-    &:focus {
-      .card__face{
-        transform: translateY(-100px) rotate(0deg) scale(1.7);
-        z-index: 5;
-        transition-duration: 0.1s;
-      }
-    }
-  }
+.card-leave.card-leave-active {
+  opacity: 0;
+  transform: translateY(90%) translateX(40rem) rotate(90deg);
+  z-index: -1;
 }

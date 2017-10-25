@@ -1,16 +1,26 @@
 .example-enter {
-  opacity: 0.01; }
+  opacity: 0.01;
+  transform: translate(-2rem); }
 
 .example-enter.example-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in; }
+  transform: translate(0);
+  transition: transform 500ms ease-in, opacity 300ms ease-in; }
 
 .example-leave {
-  opacity: 1; }
+  opacity: 1;
+  transform: translate(0); }
 
 .example-leave.example-leave-active {
   opacity: 0.01;
-  transition: opacity 300ms ease-in; }
+  transform: translate(10rem);
+  transition: transform 500ms ease-in, opacity 300ms ease-in; }
 
 .view {
-  position: absolute; }
+  position: absolute;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-bottom: 22rem;
+  top: 20rem;
+  bottom: 0;
+  width: 80%; }

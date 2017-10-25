@@ -1,26 +1,33 @@
 .header {
   display: flex;
   align-items: flex-end;
-  background: #eee;
+  background: #3d4850;
   padding: 1rem 10%; }
 
-#skiplinks a {
-  position: absolute;
-  top: 0;
-  left: -9999px; }
-  #skiplinks a:focus {
-    left: 0; }
+#skiplinks {
+  display: none; }
+  #skiplinks a {
+    position: absolute;
+    top: 0;
+    left: -9999px; }
+    #skiplinks a:focus {
+      left: 0; }
 
 .header__image {
+  position: relative;
   width: 20rem;
   height: 20rem;
-  background: url("./images/cat.jpg");
+  background: url("./images/shepcuddles-blue.jpg");
+  transform: rotate(-15deg);
   background-size: auto 100%;
   margin-bottom: -6rem;
-  border: 5px solid white;
-  border-radius: 100%; }
+  border: 8px solid #DEDEDE;
+  border-radius: 100%;
+  z-index: 10;
+  box-shadow: 0 0 0 15px #48555E; }
 
 .header__name {
   margin-left: 2rem;
   font-size: 42px;
-  color: #F0433A; }
+  color: #DEDEDE;
+  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.2); }
