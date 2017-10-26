@@ -1,30 +1,4 @@
 @import "variables";
-// Modified from original by Jack Rugile
-// ref: https://codepen.io/jackrugile/pres/WZGeGM
-@mixin card-rotate($total){
-  @for $i from 0 through ($total - 1) {
-
-    $rotationRange: 20;
-    $rotation: ($i - ($total - 1) / 2) / ($total - 2) * $rotationRange;
-    $offsetRange: 30;
-    $offset: abs(($i - ($total - 1) / 2) / ($total - 2) * $offsetRange);
-
-    &:nth-child(#{$i + 1}) {
-      .card__face {
-        transform: translateY($offset * 1px) rotate($rotation * 1deg) rotateY(0) rotateX(0);
-      }
-
-      &:hover,
-      &:focus {
-        .card__face{
-          transform: translateY(-100px) rotate(0deg) scale(1.5) rotateY(0) rotateX(0);
-          z-index: 5;
-          //transition-duration: 0.1s;
-        }
-      }
-    }
-  }
-}
 
 .menu {
   position: fixed;
@@ -36,6 +10,7 @@
 .menu__cover {
   @extend .menu;
   display: flex;
+  display: none;
   justify-content: center;
   height: 4rem;
   background: $color-FF;
@@ -50,31 +25,26 @@
 .menu__cards {
   @extend .menu;
   display: flex;
-  height: 25rem;
+  height: 22rem;
   padding: 0 10%;
   justify-content: center;
-  perspective: 20rem;
-  perspective-origin: center center;
-}
-
-@mixin card-color($index, $color){
-  &:nth-child(#{$index}){
-    .card__face{
-      background: $color;
-    }
-  }
+  
 }
 
 .card {
   position: relative;
   display: block;
-  height: 25rem;
-  width: 20rem;
+  height: 30rem;
+  width: 23rem;
   margin: 0 -2.5rem;
   cursor: pointer;
   transition: transform 500ms ease-in, opacity 300ms ease-in;
-  //@include card-rotate(4);
-  
+  perspective: 20rem;
+  perspective-origin: center top;
+  &:hover,
+  &:focus {
+    .card__face{ transition: none !important; }
+  }
 }
 
 .card__face {
@@ -84,16 +54,58 @@
   right: 0;
   top: 0;
   background: $color-I;
-  color: white;
-  //transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   border-radius: 0.5rem;
-  border:5px solid #eee;
+  border:5px solid #EEE;
   overflow: hidden;
-  box-shadow: 0 1px 2px rgba($color-FF, 0.4);
-  
+  box-shadow: 0 1px 3px 1px rgba(black, 0.2);
+  @include link-color($color-F);
+  z-index: 10;
 }
 
-.card__label {
+.card__body {
+  position: relative;
+  width: 100%;
+  height: 100%;
   padding: 1rem;
   font-weight: bold;
+}
+
+.card__label{
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+}
+
+.card__image {
+  position: relative;
+  height: 60%;
+  width: 100%;
+  background: $color-FF;
+  border-radius: 1rem;
+  //box-shadow: 2px 2px 0 1px $color-FF;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    //filter: drop-shadow(5px 5px 1px $color-F);
+  }
+}
+
+.card__number{
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 5rem;
+  height: 5rem;
+  background: $color-I;
+  color: $color-FF;
+  text-align: center;
+  line-height: 5rem;
+  border-radius: 100%;
+  font-weight: bold;
+  font-size: 24px;
+  //text-shadow: 1px 1px 0 $color-FF;
+  //border: 2px solid $color-J;
 }

@@ -24,7 +24,7 @@
   border: 8px solid #DEDEDE;
   border-radius: 100%;
   z-index: 10;
-  box-shadow: 0 0 0 15px #48555E; }
+  box-shadow: 0 0 0 10px #48555E; }
 
 .header__name {
   margin-left: 2rem;

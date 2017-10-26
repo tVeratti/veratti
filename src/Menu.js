@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import { throttle } from './Utils.js';
 import './Menu.css';
 
+// import home from './svg/home.svg';
+// import engineer from './svg/engineer.svg';
+// import gamer from './svg/gamer.svg';
+// import artist from './svg/artist.svg';
+
 class Menu extends Component {
   render() {
     const cards = [
@@ -35,44 +40,59 @@ class Menu extends Component {
 class Card extends React.Component {
   state = { transform: '' }
   render(){
-
-    const { to, label } = this.props;
-    let { translateY, rotate, scale, rotateX, rotateY } = this.state.transform;
+    const { to, label, index } = this.props;
+    const { active, transform } = this.state;
+    let { translateY, rotate, scale, rotateX, rotateY } = transform;
 
     // Active transforms...
-    if (this.state.active) {
+    if (active) {
       translateY = -100;
-      scale = 1.5;
+      scale = 1.2;
       rotate = 0;
     }
 
+    let image;
+    // switch(to){
+    //   case '/': image = home; break;
+    //   case '/engineer': image = engineer; break;
+    //   case '/gamer': image = gamer; break;
+    //   case '/artist': image = artist; break;
+    // }
+
     const style = { transform: 
-      `translateY(${translateY}px) rotate(${rotate}deg) scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+      `translateY(${translateY}px) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+    };
+
+    const imageStyle = { transform: 
+      `rotateX(${rotateX*0.5}deg) rotateY(${rotateY*0.5}deg) translateZ(5rem)`
     };
 
     return (
-    <div className="card" 
+    <div className="card"
       onMouseMove={this.mouseMove}
       onMouseEnter={this.activate}
       onMouseLeave={this.deactivate}
       >
-      <a href={to} className="card__face" ref="cardFace" style={style}>
-        <div className="card__label">{label}</div>
-      </a>
+      <Link to={to} className="card__face" style={style}>
+        <div className="card__body" ref="card">
+          <div className="card__label">{label}</div>
+          <div className="card__image" style={imageStyle} />
+          <div className="card__number">{index + 1}</div>
+        </div>
+      </Link>
     </div>
     );
   }
 
   mouseMove = e => {
-    const { index, total } = this.props;
-    const { cardFace } = this.refs;
-    const { left, right, top, bottom } = cardFace.getBoundingClientRect();
+    const { card } = this.refs;
+    const { left, right, top, bottom } = card.getBoundingClientRect();
 
     // Percentage distance through the card.
     const width = right - left;
     const height = bottom - top;
     const x = 3 * (((width - (right - e.pageX)) - 50) / 100);
-    const y = 1 * (((height - (left - e.pageY)) - 50) / 100);
+    const y = 1 * (((height - (bottom - e.pageY)) - 50) / 100);
     this.rotate(x, y);
   }
 
@@ -84,9 +104,16 @@ class Card extends React.Component {
   }, 10)
 
   activate = e => this.setState({ active: true });
-  deactivate = e => this.setState({ active: false });
+  deactivate = e => {
+    const { transform } = this.state;
+    transform.rotateX = 0;
+    transform.rotateY = 0;
+    this.setState({ active: false, transform });
+  } 
 
   componentWillMount(){
+    // Modified from original by Jack Rugile
+    // ref: https://codepen.io/jackrugile/pres/WZGeGM
     const { index, total } = this.props;
     const rotationRange = 20;
     const rotation = (index - (total - 1) / 2) / (total - 2) * rotationRange;
