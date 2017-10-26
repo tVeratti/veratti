@@ -47,7 +47,7 @@ class Card extends React.Component {
     // Active transforms...
     if (active) {
       translateY = -100;
-      scale = 1.2;
+      scale = 1;
       rotate = 0;
     }
 
@@ -60,7 +60,7 @@ class Card extends React.Component {
     // }
 
     const style = { transform: 
-      `translateY(${translateY}px) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+      `translateY(${translateY}px) rotate(${rotate}deg) scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
     };
 
     const imageStyle = { transform: 
@@ -124,7 +124,7 @@ class Card extends React.Component {
     const transform = {
       translateY: offset,
       rotate: rotation,
-      scale: 1,
+      scale: 0.5,
       rotateY: 0,
       rotateX: 0
     };

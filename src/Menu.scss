@@ -7,25 +7,25 @@
   right: 0;
 }
 
-.menu__cover {
-  @extend .menu;
-  display: flex;
-  display: none;
-  justify-content: center;
-  height: 4rem;
-  background: $color-FF;
-  a {
-    display: inline-block;
-    margin: 0 2rem;
-    height: 100%;
-    line-height: 4rem;
-  }
-}
+// .menu__cover {
+//   @extend .menu;
+//   display: flex;
+//   display: none;
+//   justify-content: center;
+//   height: 4rem;
+//   background: $color-FF;
+//   a {
+//     display: inline-block;
+//     margin: 0 2rem;
+//     height: 100%;
+//     line-height: 4rem;
+//   }
+// }
 
 .menu__cards {
   @extend .menu;
   display: flex;
-  height: 22rem;
+  height: 20rem;
   padding: 0 10%;
   justify-content: center;
   

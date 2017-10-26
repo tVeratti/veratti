@@ -12,23 +12,34 @@ import './App.css';
 class App extends Component {
   state = { translations: defaultTranslations }
 
+  componentDidMount(){
+    // Get language settings from localStorage.
+    const lang = localStorage.getItem('language');
+    if (lang) this.changeLanguage(lang);
+    localStorage.setItem('language', lang || 'en');
+  }
+
   render() {
     global.translations = this.state.translations;
 
     return (
       <BrowserRouter>
         <div id="app">
-          <Header onLanguageChange={this.changeLanguage} />
-          <Main />
+          <Header />
+          <Main onLanguageChange={this.changeLanguage} />
           <Menu />
         </div>
       </BrowserRouter>
     );
   }
 
+
   changeLanguage = lang => {
     import(`./translations/strings.${lang}.js`)
-      .then(set => this.setState({ translations: set.default }));
+      .then(set => this.setState({ translations: {
+        ...defaultTranslations // fallback
+        ...set.default 
+      }));
   }
 
 }
