@@ -11,22 +11,11 @@ import './Main.css';
 
 class Main extends Component {
   render() {
-
-    const languageOptions = [
-      {Id: 'en', Display: 'English'},
-      {Id: 'fr', Display: 'Français'},
-      {Id: 'pir', Display: 'Pirate'},
-    ].map(o => <option value={o.Id}>{o.Display}</option>);
-
     return (
       <main id="content" className="main">
-
-        {/* Site Options (Language...) */}
-        <div className="main__options">
-          <div className="field">
-            <label htmlFor="language">Language</label>
-            <select id="language" onChange={this.changeLanguage}>{languageOptions}</select>
-          </div>
+        <div className="main__links">
+          <a href="https://twitter.com/TatianaVeratti" target="_blank">Twitter</a>
+          <a href="https://github.com/tVeratti" target="_blank">GitHub</a>
         </div>
 
         <div className="main__views">

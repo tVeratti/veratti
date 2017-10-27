@@ -18,16 +18,15 @@ body {
   padding: 0; }
 
 a {
-  color: #C6B712; }
+  color: #C6B712;
+  text-decoration: none; }
   a:link, a:visited, a:active {
-    color: #C6B712;
-    text-decoration: none; }
+    color: #C6B712; }
 
 a.active {
   color: #C6B712; }
   a.active:link, a.active:visited, a.active:active {
-    color: #C6B712;
-    text-decoration: none; }
+    color: #C6B712; }
 
 h2 {
   color: #C6B712;
@@ -41,8 +40,7 @@ ul {
 
 #content {
   width: 80%;
-  margin: auto;
-  padding-top: 5rem; }
+  margin: auto; }
 
 .app__credit {
   position: absolute;

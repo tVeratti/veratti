@@ -22,7 +22,7 @@ body{
     padding: 0;
 }
 
-a { @include link-color($color-link); }
+a { @include link-color($color-link); text-decoration: none; }
 a.active { @include link-color($color-J); }
 
 h2 {
@@ -40,7 +40,6 @@ ul {
 #content {
     width: 80%;
     margin: auto;
-    padding-top: 5rem;
 }
 
 .app__credit {

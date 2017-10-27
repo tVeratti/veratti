@@ -12,6 +12,7 @@ $color-G: #1577B7;
 $color-H: #10B1E2;
 $color-I: #DEDEDE;
 $color-J: #C6B712;
+$color-K: rgba($color-I, 0.2);
 
 $color-link: $color-J;
 $color-base: $color-I;
@@ -22,7 +23,7 @@ $color-base: $color-I;
   &:visited,
   &:active {
     color: $color;
-    text-decoration: none;
+    //text-decoration: none;
   }
 }
 

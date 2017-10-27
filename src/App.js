@@ -37,9 +37,9 @@ class App extends Component {
   changeLanguage = lang => {
     import(`./translations/strings.${lang}.js`)
       .then(set => this.setState({ translations: {
-        ...defaultTranslations // fallback
+        ...defaultTranslations, // fallback
         ...set.default 
-      }));
+      }}));
   }
 
 }

@@ -1,24 +1,12 @@
-.menu, .menu__cover, .menu__cards {
+.menu, .menu__cards {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0; }
 
-.menu__cover {
-  display: flex;
-  display: none;
-  justify-content: center;
-  height: 4rem;
-  background: #3d4850; }
-  .menu__cover a {
-    display: inline-block;
-    margin: 0 2rem;
-    height: 100%;
-    line-height: 4rem; }
-
 .menu__cards {
   display: flex;
-  height: 22rem;
+  height: 20rem;
   padding: 0 10%;
   justify-content: center; }
 
@@ -50,8 +38,7 @@
   color: #48555E;
   z-index: 10; }
   .card__face:link, .card__face:visited, .card__face:active {
-    color: #48555E;
-    text-decoration: none; }
+    color: #48555E; }
 
 .card__body {
   position: relative;

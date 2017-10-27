@@ -1,26 +1,42 @@
-.example-enter {
+.view-enter {
   opacity: 0.01;
   transform: translate(-2rem); }
 
-.example-enter.example-enter-active {
+.view-enter.view-enter-active {
   opacity: 1;
   transform: translate(0);
   transition: transform 500ms ease-in, opacity 300ms ease-in; }
 
-.example-leave {
+.view-leave {
   opacity: 1;
   transform: translate(0); }
 
-.example-leave.example-leave-active {
+.view-leave.view-leave-active {
   opacity: 0.01;
   transform: translate(10rem);
   transition: transform 500ms ease-in, opacity 300ms ease-in; }
+
+.main {
+  padding-top: 1rem; }
+
+.main__links {
+  position: absolute;
+  left: calc(10% + 6rem);
+  padding-top: 12rem;
+  padding-left: 3rem;
+  width: 23rem; }
+  .main__links a {
+    display: block;
+    padding: 1rem;
+    text-decoration: underline; }
+
+.main__views {
+  position: relative; }
 
 .view {
   position: absolute;
   border-radius: 1rem;
   padding: 1rem;
-  padding-bottom: 22rem;
-  top: 20rem;
-  bottom: 0;
-  width: 80%; }
+  top: 0;
+  left: 24rem;
+  right: 0; }

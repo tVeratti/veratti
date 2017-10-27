@@ -22,12 +22,50 @@
   transition: transform 500ms ease-in, opacity 300ms ease-in;
 }
 
+.main{
+  padding-top: 1rem;
+}
+.main__links{
+  position: absolute;
+  left: calc(10% + 6rem);
+  padding-top: 12rem;
+  padding-left: 3rem;
+  width: 23rem;
+  //text-align: right;
+  a {
+    display: block;
+    padding: 1rem;
+    text-decoration: underline;
+    //@include link-color($color-H);
+  }
+}
+.main__views {
+  position: relative;
+}
+
+// .main__options{
+//   display: flex;
+//   padding-left: 25rem;
+//   label{
+//     display: block;
+//     padding-bottom: 0.5rem;
+//   }
+//   select {
+//     border-radius: 0.3rem;
+//     border: none;
+//     border-bottom: 1px solid $color-FF;
+//     padding: 0.5rem;
+//     background: #eee;
+//     option{
+//       padding: 0.5rem;
+//     }
+//   }
+// }
 .view {
   position: absolute;
   border-radius: 1rem;
   padding: 1rem;
-  padding-bottom: 22rem;
-  top: 20rem;
-  bottom: 0;
-  width: 80%;
+  top: 0;
+  left: 24rem;
+  right: 0;
 }

@@ -4,7 +4,7 @@
   display: flex;
   align-items: flex-end;
   background: $color-FF;
-  padding: 1rem 10%;
+  padding: 2rem 10% 0 10%;
 }
 
 #skiplinks {
@@ -21,12 +21,12 @@
 
 .header__image{
   position: relative;
-  width: 20rem;
-  height: 20rem;
+  width: 23rem;
+  height: 23rem;
   background: url('./images/shepcuddles-blue.jpg');
   transform: rotate(-15deg);
   background-size: auto 100%;
-  margin-bottom: -6rem;
+  margin-bottom: -10rem;
   border: 8px solid $color-I;
   border-radius: 100%;
   z-index: 10;

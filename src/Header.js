@@ -19,11 +19,6 @@ class Header extends Component {
       </header>
     );
   }
-
-  changeLanguage = lang => {
-    const { onLanguageChange } = this.props;
-    onLanguageChange('fr');
-  }
 }
 
 export default Header;
