@@ -21,10 +21,10 @@
 
 .main__links {
   position: absolute;
-  left: calc(10% + 6rem);
-  padding-top: 12rem;
-  padding-left: 3rem;
-  width: 23rem; }
+  top: 27rem;
+  width: 23rem;
+  background: #3d4850;
+  border-radius: 0.3rem; }
   .main__links a {
     display: block;
     padding: 1rem;

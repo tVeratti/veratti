@@ -14,8 +14,9 @@ class Main extends Component {
     return (
       <main id="content" className="main">
         <div className="main__links">
-          <a href="https://twitter.com/TatianaVeratti" target="_blank">Twitter</a>
-          <a href="https://github.com/tVeratti" target="_blank">GitHub</a>
+          <a rel="noopener noreferrer" href="https://twitter.com/TatianaVeratti" target="_blank">Twitter</a>
+          <a rel="noopener noreferrer" href="https://github.com/tVeratti" target="_blank">GitHub</a>
+          <a rel="noopener noreferrer" href="http://steamcommunity.com/id/veratti" target="_blank">Steam</a>
         </div>
 
         <div className="main__views">

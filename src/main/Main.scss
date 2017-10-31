@@ -25,12 +25,13 @@
 .main{
   padding-top: 1rem;
 }
+
 .main__links{
   position: absolute;
-  left: calc(10% + 6rem);
-  padding-top: 12rem;
-  padding-left: 3rem;
+  top: 27rem;
   width: 23rem;
+  background: $color-FF;
+  border-radius: 0.3rem;
   //text-align: right;
   a {
     display: block;
