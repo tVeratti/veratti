@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Gamer extends Component {
+export default class extends Component {
   render() {
     return (
       <div id="gamer" className="view view--gamer">
@@ -11,5 +11,3 @@ class Gamer extends Component {
     );
   }
 }
-
-export default Gamer;

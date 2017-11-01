@@ -9,7 +9,7 @@ import './Menu.css';
 // import gamer from './svg/gamer.svg';
 // import artist from './svg/artist.svg';
 
-class Menu extends Component {
+export default class extends Component {
   render() {
     const cards = [
       {to: '/', label: 'Home'},
@@ -99,7 +99,7 @@ class Card extends React.Component {
     transform.rotateX = y;
     transform.rotateY = x;
     this.setState({ transform });
-  }, 10)
+  }, 25)
 
   activate = e => this.setState({ active: true });
   deactivate = e => {
@@ -130,5 +130,3 @@ class Card extends React.Component {
     this.setState({ transform });
   }
 };
-
-export default Menu;

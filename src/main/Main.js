@@ -9,7 +9,7 @@ import Gamer from './Gamer.js';
 
 import './Main.css';
 
-class Main extends Component {
+export default class extends Component {
   render() {
     return (
       <main id="content" className="main">
@@ -95,5 +95,3 @@ class Main extends Component {
     );
   }
 }
-
-export default Main;

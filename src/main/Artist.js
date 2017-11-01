@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Artist extends Component {
+export default class extends Component {
   render() {
     return (
       <div id="artist" className="view view--artist">
@@ -12,5 +12,3 @@ class Artist extends Component {
     );
   }
 }
-
-export default Artist;
