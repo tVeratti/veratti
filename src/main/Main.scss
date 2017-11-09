@@ -34,10 +34,29 @@
   border-radius: 0.3rem;
   //text-align: right;
   a {
-    display: block;
-    padding: 1rem;
+    display: table;
+    width: 100%;
     text-decoration: underline;
+    text-align: left;
     //@include link-color($color-H);
+    &>span {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    
+    .ex-link__logo {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .ex-link__text {
+      padding: 0 1rem;
+    }
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
   }
 }
 .main__views {

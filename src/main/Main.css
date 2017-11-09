@@ -26,9 +26,21 @@
   background: #3d4850;
   border-radius: 0.3rem; }
   .main__links a {
-    display: block;
-    padding: 1rem;
-    text-decoration: underline; }
+    display: table;
+    width: 100%;
+    text-decoration: underline;
+    text-align: left; }
+    .main__links a > span {
+      display: table-cell;
+      vertical-align: middle; }
+    .main__links a .ex-link__logo {
+      width: 3rem;
+      height: 3rem; }
+    .main__links a .ex-link__text {
+      padding: 0 1rem; }
+  .main__links svg {
+    width: 100%;
+    height: 100%; }
 
 .main__views {
   position: relative; }

@@ -49,14 +49,7 @@ class Card extends React.Component {
       translateY = -100;
       rotate = 0;
     }
-
-    // switch(to){
-    //   case '/': image = home; break;
-    //   case '/engineer': image = engineer; break;
-    //   case '/gamer': image = gamer; break;
-    //   case '/artist': image = artist; break;
-    // }
-
+    
     const style = { transform: 
       `translateY(${translateY}px) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
     };
