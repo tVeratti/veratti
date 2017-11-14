@@ -23,6 +23,7 @@ export default class extends Component {
           {this.renderGitHubLink()}
           {this.renderYouTubeLink()}
           {this.renderSteamLink()}
+          {this.renderSourceLink()}
         </div>
 
         <div className="main__views">
@@ -81,6 +82,13 @@ export default class extends Component {
       'YouTube',
       <YouTubeIcon />
     );
+  }
+
+  renderSourceLink(){
+    return this.renderLink(
+      'https://github.com/tVeratti/veratti',
+      'Source code for this site'
+    )
   }
 
   renderLink(href, text, svg){
