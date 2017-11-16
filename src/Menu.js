@@ -4,11 +4,6 @@ import { Link } from 'react-router-dom';
 import { throttle } from './Utils.js';
 import './Menu.css';
 
-// import home from './svg/home.svg';
-// import engineer from './svg/engineer.svg';
-// import gamer from './svg/gamer.svg';
-// import artist from './svg/artist.svg';
-
 export default class extends Component {
   render() {
     const cards = [
