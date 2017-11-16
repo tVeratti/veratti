@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { CSSTransitionGroup } from 'react-transition-group'
+import { CSSTransitionGroup } from 'react-transition-group';
 
 import Home from './Home.js';
 import Engineer from './Engineer.js';
@@ -28,21 +28,23 @@ export default class extends Component {
 
         <div className="main__views">
           {/* Routing Main Views */}
-          <Route render={({ location }) => (
-            <CSSTransitionGroup
-              transitionName="view"
-              transitionEnterTimeout={500}
-              transitionLeaveTimeout={300}>
-              <Switch key={location.key} location={location}>
-                <Route path="/" exact component={Home} />
-                <Route path="/engineer" component={Engineer} />
-                <Route path="/artist" component={Artist} />
-                <Route path="/gamer" component={Gamer} />
-              </Switch>
-            </CSSTransitionGroup>
-          )}/>
+          <Route
+            render={({ location }) => (
+              <CSSTransitionGroup
+                transitionName="view"
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={300}>
+                <Switch key={location.key} location={location}>
+                  <Route path="/" exact component={Home} />
+                  <Route path="/engineer" component={Engineer} />
+                  <Route path="/artist" component={Artist} />
+                  <Route path="/gamer" component={Gamer} />
+                </Switch>
+              </CSSTransitionGroup>
+            )}
+          />
         </div>
-    </main>
+      </main>
     );
   }
 
@@ -50,9 +52,9 @@ export default class extends Component {
     const { value } = e.target;
     const { onLanguageChange } = this.props;
     onLanguageChange(value);
-  }
+  };
 
-  renderTwitterLink(){
+  renderTwitterLink() {
     return this.renderLink(
       'https://twitter.com/TatianaVeratti',
       'Twitter',
@@ -60,7 +62,7 @@ export default class extends Component {
     );
   }
 
-  renderGitHubLink(){
+  renderGitHubLink() {
     return this.renderLink(
       'https://github.com/tVeratti',
       'GitHub',
@@ -68,15 +70,15 @@ export default class extends Component {
     );
   }
 
-  renderSteamLink(){
+  renderSteamLink() {
     return this.renderLink(
       'http://steamcommunity.com/id/veratti',
       'Steam',
       <SteamIcon />
-    )
+    );
   }
 
-  renderYouTubeLink(){
+  renderYouTubeLink() {
     return this.renderLink(
       'https://www.youtube.com/channel/UC1dwxYAwHOAPCws0h9dmLDg',
       'YouTube',
@@ -84,17 +86,23 @@ export default class extends Component {
     );
   }
 
-  renderSourceLink(){
+  renderSourceLink() {
     return this.renderLink(
       'https://github.com/tVeratti/veratti',
       'Source code for this site'
-    )
+    );
   }
 
-  renderLink(href, text, svg){
+  renderLink(href, text, svg) {
     return (
-      <a className="ex-link" rel="noopener noreferrer" target="_blank" href={href}>
-        <span className="ex-link__logo" aria-hidden="true">{svg}</span>
+      <a
+        className="ex-link"
+        rel="noopener noreferrer"
+        target="_blank"
+        href={href}>
+        <span className="ex-link__logo" aria-hidden="true">
+          {svg}
+        </span>
         <span className="ex-link__text">{text}</span>
       </a>
     );

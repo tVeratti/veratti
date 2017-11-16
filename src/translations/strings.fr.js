@@ -4,4 +4,4 @@ export default {
   Contact: 'Contactez Moi',
   Engineer: 'x',
   Engineer_Intro: 'xx'
-}
+};

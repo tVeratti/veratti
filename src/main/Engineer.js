@@ -6,7 +6,10 @@ class Engineer extends Component {
       <div id="engineer" className="view view--engineer">
         <h2>{global.translations.Engineer}</h2>
         <p>
-          <q>The secret of joy in work is contained in one word – excellence. To know how to do something well is to enjoy it.</q>
+          <q>
+            The secret of joy in work is contained in one word – excellence. To
+            know how to do something well is to enjoy it.
+          </q>
           - Pearl S. Buck
         </p>
         <p>{global.translations.Engineer_Intro}</p>

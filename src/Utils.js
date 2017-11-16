@@ -6,34 +6,33 @@
 const debounce = function(func, wait, immediate) {
   var timeout;
   return function() {
-      var context = this, args = arguments;
-      var later = function() {
-          timeout = null;
-          if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
+    var context = this,
+      args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
   };
 };
 
 // Throttle function
 const throttle = function(callback, limit) {
   var wait = false;
-  return function () { 
-      var context = this, args = arguments;
-      if (!wait) {
-          callback.apply(context, args);
-          wait = true;
-          setTimeout(function () {
-              wait = false;
-          }, limit);
-      }
-  }
-}
-
-export {
-  debounce,
-  throttle
+  return function() {
+    var context = this,
+      args = arguments;
+    if (!wait) {
+      callback.apply(context, args);
+      wait = true;
+      setTimeout(function() {
+        wait = false;
+      }, limit);
+    }
+  };
 };
+
+export { debounce, throttle };
