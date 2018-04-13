@@ -16,9 +16,21 @@ class Engineer extends Component {
         <ul>
           <li>JavaScript</li>
           <li>C#</li>
+          <li>SQL/T-SQL</li>
         </ul>
 
         <h3>JavaScript</h3>
+        <p>
+          JavaScript is my sandbox of choice. Sometimes I feel like a master, 
+          and other times I am humbled (and excited) by the vast amount of knowledge 
+          I still stand to gain.
+        </p>
+        <p>
+          My personal GitHub is mostly pet projects that I have used to learn smaller
+          pieces of frameworks and patterns. Even this site itself was an experiment with
+          technologies that I hope to incorporate into my work and other projects in the 
+          future!
+        </p>
       </div>
     );
   }

@@ -17,6 +17,12 @@ export default class extends Component {
           abilities and seeing new success at a practiced skill is addictive and
           wonderful.
         </p>
+        <p>
+          I have led a worldwide top 10 guild in Rift, ranked up to Master as 
+          a DPS main in Overwatch, and earned my fair share of hackusations
+          along the way. I am always learning, reflecting, and growing through
+          gaming.
+        </p>
       </div>
     );
   }
