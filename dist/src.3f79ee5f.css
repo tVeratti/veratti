@@ -17,8 +17,8 @@
 
 .header__image {
   position: relative;
-  width: 23rem;
-  height: 23rem;
+  width: 20rem;
+  height: 20rem;
   background: url("shepcuddles-blue.b77e6798.jpg");
   -webkit-transform: rotate(-15deg);
       -ms-transform: rotate(-15deg);
@@ -38,21 +38,29 @@
   text-shadow: 0 4px 0 rgba(0, 0, 0, 0.2); }
 .view-enter {
   opacity: 0.01;
-  transform: translate(-2rem); }
+  -webkit-transform: translate(-2rem);
+          transform: translate(-2rem); }
 
 .view-enter.view-enter-active {
   opacity: 1;
-  transform: translate(0);
-  transition: transform 500ms ease-in, opacity 300ms ease-in; }
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  transition: opacity 300ms ease-in, -webkit-transform 500ms ease-in;
+  transition: transform 500ms ease-in, opacity 300ms ease-in;
+  transition: transform 500ms ease-in, opacity 300ms ease-in, -webkit-transform 500ms ease-in; }
 
 .view-leave {
   opacity: 1;
-  transform: translate(0); }
+  -webkit-transform: translate(0);
+          transform: translate(0); }
 
 .view-leave.view-leave-active {
   opacity: 0.01;
-  transform: translate(10rem);
-  transition: transform 500ms ease-in, opacity 300ms ease-in; }
+  -webkit-transform: translate(10rem);
+          transform: translate(10rem);
+  transition: opacity 300ms ease-in, -webkit-transform 500ms ease-in;
+  transition: transform 500ms ease-in, opacity 300ms ease-in;
+  transition: transform 500ms ease-in, opacity 300ms ease-in, -webkit-transform 500ms ease-in; }
 
 .main {
   padding-top: 1rem; }
@@ -60,7 +68,7 @@
 .main__links {
   position: absolute;
   top: 27rem;
-  width: 23rem;
+  width: 20rem;
   background: #3d4850;
   border-radius: 0.3rem; }
   .main__links a {
@@ -97,10 +105,12 @@
   right: 0; }
 
 .menu__cards {
+  display: -ms-flexbox;
   display: flex;
   height: 20rem;
   padding: 0 10%;
-  justify-content: center; }
+  -ms-flex-pack: center;
+      justify-content: center; }
 
 .card {
   position: relative;
@@ -109,10 +119,18 @@
   width: 23rem;
   margin: 0 -2.5rem;
   cursor: pointer;
+  -webkit-transition: opacity 300ms ease-in, -webkit-transform 500ms ease-in;
+  transition: opacity 300ms ease-in, -webkit-transform 500ms ease-in;
+  -o-transition: transform 500ms ease-in, opacity 300ms ease-in;
   transition: transform 500ms ease-in, opacity 300ms ease-in;
-  perspective: 20rem;
-  perspective-origin: center top; }
+  transition: transform 500ms ease-in, opacity 300ms ease-in, -webkit-transform 500ms ease-in;
+  -webkit-perspective: 20rem;
+          perspective: 20rem;
+  -webkit-perspective-origin: center top;
+          perspective-origin: center top; }
   .card:hover .card__face, .card:focus .card__face {
+    -webkit-transition: none !important;
+    -o-transition: none !important;
     transition: none !important; }
 
 .card__face {
@@ -122,11 +140,16 @@
   right: 0;
   top: 0;
   background: #DEDEDE;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   border-radius: 0.5rem;
   border: 5px solid #EEE;
   overflow: hidden;
-  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
   color: #48555E;
   z-index: 10; }
   .card__face:link, .card__face:visited, .card__face:active {
