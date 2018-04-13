@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "autoprefixer": "^8.2.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
@@ -19,7 +20,13 @@
     "watch": "parcel src/index.html",
     "prettier": "prettier --write \"src/**/*.js*\""
   },
-  "devDependencies": {
-    "node-sass": "^4.8.3"
+  "postcss": {
+    "modules": false,
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [">1%", "last 4 versions", "Firefox ESR", "not ie < 9"],
+        "flexbox": "no-2009"
+      }
+    }
   }
 }

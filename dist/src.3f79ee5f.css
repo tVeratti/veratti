@@ -1,6 +1,8 @@
 .header {
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
+  -ms-flex-align: end;
+      align-items: flex-end;
   background: #3d4850;
   padding: 2rem 10% 0 10%; }
 
@@ -18,13 +20,16 @@
   width: 23rem;
   height: 23rem;
   background: url("shepcuddles-blue.b77e6798.jpg");
-  transform: rotate(-15deg);
+  -webkit-transform: rotate(-15deg);
+      -ms-transform: rotate(-15deg);
+          transform: rotate(-15deg);
   background-size: auto 100%;
   margin-bottom: -10rem;
   border: 8px solid #DEDEDE;
   border-radius: 100%;
   z-index: 10;
-  box-shadow: 0 0 0 10px #48555E; }
+  -webkit-box-shadow: 0 0 0 10px #48555E;
+          box-shadow: 0 0 0 10px #48555E; }
 
 .header__name {
   margin-left: 2rem;
