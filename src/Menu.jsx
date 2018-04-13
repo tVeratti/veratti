@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import { throttle } from './Utils.js';
-import './Menu.css';
+import './Menu.scss';
 
 export default class extends Component {
   render() {

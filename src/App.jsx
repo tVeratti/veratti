@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import Header from './Header.js';
-import Main from './main/Main.js';
-import Menu from './Menu.js';
+import Header from './Header.jsx';
+import Main from './main/Main.jsx';
+import Menu from './Menu.jsx';
 
 import defaultTranslations from './translations/strings.en.js';
 
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   state = { translations: defaultTranslations };

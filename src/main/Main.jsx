@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group';
 
-import Home from './Home.js';
-import Engineer from './Engineer.js';
-import Artist from './Artist.js';
-import Gamer from './Gamer.js';
+import Home from './Home.jsx';
+import Engineer from './Engineer.jsx';
+import Artist from './Artist.jsx';
+import Gamer from './Gamer.jsx';
 
 import YouTubeIcon from '../svg/youtube.js';
 import TwitterIcon from '../svg/twitter.js';
 import GitHubIcon from '../svg/github.js';
 import SteamIcon from '../svg/steam.js';
 
-import './Main.css';
+import './Main.scss';
 
 export default class extends Component {
   render() {
